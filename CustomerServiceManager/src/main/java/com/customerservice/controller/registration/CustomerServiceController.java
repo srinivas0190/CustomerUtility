@@ -21,7 +21,6 @@ import com.customerservice.service.registration.CustomerServiceHandler;
 @Controller
 public class CustomerServiceController {
 	
-	final static Logger logger = Logger.getLogger(CustomerServiceController.class);
 	
 	@Autowired
 	private CustomerServiceHandler customerServHandler;
@@ -34,11 +33,11 @@ public class CustomerServiceController {
 			if (serviceDetails != null) {
 				
 		        model.addAttribute("serviceDetails",serviceDetails);
-				logger.info("Executed Successfully");
+		
 				return new ModelAndView("register","customer", customer );
 			}
 			else {
-				logger.info("Not executed successfully");
+			
 				return new ModelAndView("errorPage","customer",customer);
 			}
 			
